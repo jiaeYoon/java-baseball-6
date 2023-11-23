@@ -8,7 +8,14 @@ public class InputValidate {
     public List<Integer> numsValidate(String input) {
         List<Integer> nums = isNumInRange(input);
         hasDuplicate(nums);
+        is3Digit(nums);
         return nums;
+    }
+
+    private void is3Digit(List<Integer> nums) {
+        if (nums.size() != 3) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private void hasDuplicate(List<Integer> nums) {
