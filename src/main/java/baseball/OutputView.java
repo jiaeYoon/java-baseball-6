@@ -1,31 +1,29 @@
 package baseball;
 
-import java.util.Map;
-
 public class OutputView {
 
-    public void printGameStart() {
+    public static void printGameStart() {
         System.out.println("숫자 야구 게임을 시작합니다.");
     }
 
-    public void printGameResult(Map<State, Integer> result) {
-        int ball = result.get(State.BALL);
-        int strike = result.get(State.STRIKE);
+    public static void printGameResult(Result result) {
+        int ballCount = result.getBallCount();
+        int strikeCount = result.getStrikeCount();
 
         String output = "";
-        if (ball != 0) {
-            output += ball + "볼 ";
+        if (ballCount != 0) {
+            output += ballCount + "볼 ";
         }
-        if (strike != 0) {
-            output += strike + "스트라이크";
+        if (strikeCount != 0) {
+            output += strikeCount + "스트라이크";
         }
-        if (ball == 0 && strike == 0) {
+        if (ballCount == 0 && strikeCount == 0) {
             output = "낫싱";
         }
         System.out.println(output);
     }
 
-    public void printNewGameStartOrNot() {
+    public static void printNewGameStartOrNot() {
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n"
                                    + "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     }

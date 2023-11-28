@@ -2,17 +2,14 @@ package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
 
-import java.util.List;
+public class InputView {
 
-public class InputView extends InputValidate {
-
-    public List<Integer> readUserNums() {
+    public static String readPlayerInput() {
         System.out.print("숫자를 입력해주세요 : ");
-        String input = Console.readLine();
-        return numsValidate(input);
+        return Console.readLine();
     }
 
-    public int readNewGameSignal() {
+    public static int readRestartSignal() {
         return Integer.parseInt(Console.readLine());
     }
 }
